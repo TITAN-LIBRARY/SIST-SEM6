@@ -1,0 +1,7 @@
+void main()
+{
+int a;
+a = 5+10;
+b=2.5;
+printf("%d",a);
+}

@@ -1,0 +1,5 @@
+Ctrl + 1
+Ctrl + 2
+Ctrl + 6
+In cmd
+Mainfilename.exe inputfilename.txt

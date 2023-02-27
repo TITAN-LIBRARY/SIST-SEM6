@@ -1,0 +1,37 @@
+%option noyywrap
+%{
+	#include<stdio.h>
+%}
+digit [0-9]
+op [-+*/=]
+letter [a-zA-Z]
+special [;:.,'"]
+ws[\n\t]
+%%
+printf|scanf|if|else|for|break|int     printf("\n %s is a keyword",yytext);
+void|main       printf("\n %s is a keyword", yytext);
+{digit}+        printf("\n %s is a keyword", yytext);
+{digit}+.{digit}+                printf("\n%s is a floating point number\n", yytext);
+{special}                        printf("\n%s is a punctuation\n", yytext);
+{op}    printf("\n%s is an opertator", yytext);
+{letter}({letter}{digit})*       printf("\n %s is an identifier", yytext);
+\{                                printf("\n%s is a set open brackets\n", yytext);
+\}                                printf("\n%s is a set close brackets\n", yytext);
+\(                                printf("\n%s is a open brackets\n", yytext);
+\)                                printf("\n%s is a close brackets\n", yytext);
+{ws}
+%%
+
+int main(int argc, char *argv[])
+{
+	FILE *fp;
+	fp = fopen(argv[1], "r");
+	if(fp == NULL)
+	  printf("No File Exist");
+	else
+	{
+	yyin = fp;
+	yylex();
+	}
+	return 0;
+}

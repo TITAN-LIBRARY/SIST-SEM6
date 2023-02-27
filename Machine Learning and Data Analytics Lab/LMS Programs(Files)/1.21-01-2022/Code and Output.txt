@@ -1,0 +1,151 @@
+import pandas as pd
+
+salary = pd.read_csv("Salary.csv")
+
+salary
+O/P
+YearsExperience	Salary
+0	1.1	39343
+1	1.3	46205
+2	1.5	37731
+3	2.0	43525
+4	2.2	39891
+5	2.9	56642
+6	3.0	60150
+7	3.2	54445
+8	3.2	64445
+9	3.7	57189
+10	3.9	63218
+11	4.0	55794
+12	4.0	56957
+13	4.1	57081
+14	4.5	61111
+15	4.9	67938
+16	5.1	66029
+17	5.3	83088
+18	5.9	81363
+19	6.0	93940
+20	6.8	91738
+21	7.1	98273
+22	7.9	101302
+23	8.2	113812
+24	8.7	109431
+25	9.0	105582
+26	9.5	116969
+27	9.6	112635
+28	10.3	122391
+29	10.5	121872
+30	11.2	127345
+31	11.5	126756
+32	12.3	128765
+33	12.9	135675
+34	13.5	139465
+
+# i)
+# print rows
+print(salary)
+print()
+# print columns
+print(salary.columns)
+print()
+# print size
+print(salary.size)
+print()
+# print shape
+print(salary.shape)
+O/P
+YearsExperience  Salary
+0               1.1   39343
+1               1.3   46205
+2               1.5   37731
+3               2.0   43525
+4               2.2   39891
+5               2.9   56642
+6               3.0   60150
+7               3.2   54445
+8               3.2   64445
+9               3.7   57189
+10              3.9   63218
+11              4.0   55794
+12              4.0   56957
+13              4.1   57081
+14              4.5   61111
+15              4.9   67938
+16              5.1   66029
+17              5.3   83088
+18              5.9   81363
+19              6.0   93940
+20              6.8   91738
+21              7.1   98273
+22              7.9  101302
+23              8.2  113812
+24              8.7  109431
+25              9.0  105582
+26              9.5  116969
+27              9.6  112635
+28             10.3  122391
+29             10.5  121872
+30             11.2  127345
+31             11.5  126756
+32             12.3  128765
+33             12.9  135675
+34             13.5  139465
+
+Index(['YearsExperience', 'Salary'], dtype='object')
+
+70
+
+(35, 2)
+
+# ii)
+# print the memory usage
+print(salary.memory_usage())
+print()
+# print dimensions of the corresponding dataset
+print(salary.shape)
+O/P
+Index              128
+YearsExperience    280
+Salary             280
+dtype: int64
+
+(35, 2)
+
+# iii)
+# print head of the dataset with n value as 10
+print(salary.head(10))
+print()
+# print tail of the dataset with n value as 10
+print(salary.tail(10))
+O/P
+   YearsExperience  Salary
+0              1.1   39343
+1              1.3   46205
+2              1.5   37731
+3              2.0   43525
+4              2.2   39891
+5              2.9   56642
+6              3.0   60150
+7              3.2   54445
+8              3.2   64445
+9              3.7   57189
+
+    YearsExperience  Salary
+25              9.0  105582
+26              9.5  116969
+27              9.6  112635
+28             10.3  122391
+29             10.5  121872
+30             11.2  127345
+31             11.5  126756
+32             12.3  128765
+33             12.9  135675
+34             13.5  139465
+
+# iv)
+#print the values in 3rd column of the dataset 
+#fully and value at index [5,9].
+val = salary['Salary'].values[5:9]
+val
+O/P
+array([56642, 60150, 54445, 64445], dtype=int64)

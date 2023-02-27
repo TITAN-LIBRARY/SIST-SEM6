@@ -1,0 +1,17 @@
+%option noyywrap
+%{
+	#include<stdio.h>
+%}
+
+digit  [0-9]
+letter  [a-zA-Z]
+
+%%
+{digit}+   printf("%s is a Digit\n", yytext);
+{letter}({letter}|{digit})* printf("%s is a Identifier", yytext); 
+%%
+int main()
+{
+	yylex();
+	return 0;
+}

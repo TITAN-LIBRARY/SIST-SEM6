@@ -1,0 +1,4 @@
+Compile Lex
+Compile Yacc
+Built Lex + Yacc
+Execute it
